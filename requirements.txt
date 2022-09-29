@@ -5,13 +5,14 @@ numpy
 pillow
 scikit-learn
 
-#typing
-#streamlit-prophet
+# pip install prophet streamlit yfinance plotly for stockforecast app
+prophet
+yfinance
+plotly
 
 #git+https://github.com/artefactory-global/streamlit_prophet.git@main
 
 #streamlit-prophet
-
 
 # streamlit==0.71.0
 # pandas==1.1.3
