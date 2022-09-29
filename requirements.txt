@@ -5,7 +5,9 @@ numpy
 pillow
 scikit-learn
 
-#streamlit_prophet
+git+https://github.com/artefactory-global/streamlit_prophet.git@main
+
+#streamlit-prophet
 
 
 # streamlit==0.71.0
