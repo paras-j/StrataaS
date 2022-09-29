@@ -5,7 +5,9 @@ numpy
 pillow
 scikit-learn
 
-git+https://github.com/artefactory-global/streamlit_prophet.git@main
+streamlit-prophet
+
+#git+https://github.com/artefactory-global/streamlit_prophet.git@main
 
 #streamlit-prophet
 
