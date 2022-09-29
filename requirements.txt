@@ -5,6 +5,8 @@ numpy
 pillow
 scikit-learn
 
+streamlit_prophet
+
 
 # streamlit==0.71.0
 # pandas==1.1.3
