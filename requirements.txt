@@ -10,6 +10,12 @@ prophet
 yfinance
 plotly
 
+# pip install pandas streamlit psycopg2 plotly tweepy requests
+# Streamlit - Building Financial Dashboards with Python - https://www.youtube.com/watch?v=0ESc1bh3eIg
+psycopg2
+requests
+tweepy
+
 #git+https://github.com/artefactory-global/streamlit_prophet.git@main
 
 #streamlit-prophet
