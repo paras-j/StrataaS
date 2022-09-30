@@ -31,43 +31,44 @@ st.title("Voice of the Stakeholders")
 
 
 
-# import streamlit as st
-# import pandas as pd
-# import numpy as np
-# import requests
-# import tweepy
+import streamlit as st
+import pandas as pd
+import numpy as np
+import requests
+import tweepy
 # import config 
 # import psycopg2, psycopg2.extras
-# import plotly.graph_objects as go
+import plotly.graph_objects as go
 
-# auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY, config.TWITTER_CONSUMER_SECRET)
-# auth.set_access_token(config.TWITTER_ACCESS_TOKEN, config.TWITTER_ACCESS_TOKEN_SECRET)
-# api = tweepy.API(auth)
+auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY, config.TWITTER_CONSUMER_SECRET)
+auth.set_access_token(config.TWITTER_ACCESS_TOKEN, config.TWITTER_ACCESS_TOKEN_SECRET)
+api = tweepy.API(auth)
 
 # connection = psycopg2.connect(host=config.DB_HOST, database=config.DB_NAME, user=config.DB_USER, password=config.DB_PASS)
 # cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
 # option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'wallstreetbets', 'stocktwits', 'chart', 'pattern'), 3)
+option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'stocktwits'), 3)
 
 # st.header(option)
 
-# if option == 'twitter':
-#     for username in config.TWITTER_USERNAMES:
-#         user = api.get_user(username)
-#         tweets = api.user_timeline(username)
+if option == 'twitter':
+    for username in config.TWITTER_USERNAMES:
+        user = api.get_user(username)
+        tweets = api.user_timeline(username)
 
-#         st.subheader(username)
-#         st.image(user.profile_image_url)
+        st.subheader(username)
+        st.image(user.profile_image_url)
         
-#         for tweet in tweets:
-#             if '$' in tweet.text:
-#                 words = tweet.text.split(' ')
-#                 for word in words:
-#                     if word.startswith('$') and word[1:].isalpha():
-#                         symbol = word[1:]
-#                         st.write(symbol)
-#                         st.write(tweet.text)
-#                         st.image(f"https://finviz.com/chart.ashx?t={symbol}")
+        for tweet in tweets:
+            if '$' in tweet.text:
+                words = tweet.text.split(' ')
+                for word in words:
+                    if word.startswith('$') and word[1:].isalpha():
+                        symbol = word[1:]
+                        st.write(symbol)
+                        st.write(tweet.text)
+                        st.image(f"https://finviz.com/chart.ashx?t={symbol}")
 
 # if option == 'chart':
 #     symbol = st.sidebar.text_input("Symbol", value='MSFT', max_chars=None, key=None, type='default')
@@ -179,15 +180,15 @@ st.title("Voice of the Stakeholders")
 #         st.image(f"https://finviz.com/chart.ashx?t={row['symbol']}")
 
 
-# if option == 'stocktwits':
-#     symbol = st.sidebar.text_input("Symbol", value='AAPL', max_chars=5)
+if option == 'stocktwits':
+    symbol = st.sidebar.text_input("Symbol", value='AAPL', max_chars=5)
 
-#     r = requests.get(f"https://api.stocktwits.com/api/2/streams/symbol/{symbol}.json")
+    r = requests.get(f"https://api.stocktwits.com/api/2/streams/symbol/{symbol}.json")
 
-#     data = r.json()
+    data = r.json()
 
-#     for message in data['messages']:
-#         st.image(message['user']['avatar_url'])
-#         st.write(message['user']['username'])
-#         st.write(message['created_at'])
-#         st.write(message['body'])
+    for message in data['messages']:
+        st.image(message['user']['avatar_url'])
+        st.write(message['user']['username'])
+        st.write(message['created_at'])
+        st.write(message['body'])
