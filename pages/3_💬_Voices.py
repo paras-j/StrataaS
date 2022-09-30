@@ -55,7 +55,8 @@ option = st.sidebar.selectbox("Which Dashboard?", ('stocktwits','twitter'), 1)
 if option == 'twitter':
     for username in st.secrets.TWITTER_USERNAMES:
 #        user = api.get_user(username)
-        user = api.get_user(user_id=username, include_entities=False)
+        user = api.get_user(screen_name="TechWiser", include_entities=False)
+        description = user._json['description']
         tweets = api.user_timeline(username)
 
         st.subheader(username)
