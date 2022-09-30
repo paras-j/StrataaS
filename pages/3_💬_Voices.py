@@ -48,7 +48,7 @@ api = tweepy.API(auth)
 # cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
 # option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'wallstreetbets', 'stocktwits', 'chart', 'pattern'), 3)
-option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'stocktwits'), 3)
+option = st.sidebar.selectbox("Which Dashboard?", ('stocktwits','twitter'), 3)
 
 # st.header(option)
 
