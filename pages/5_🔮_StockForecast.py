@@ -382,11 +382,11 @@ if "TEST_INTERVAL_LENGTH" not in st.session_state:
 
 if "TRAIN_INTERVAL_LENGTH" not in st.session_state:
     # set the initial default value of the training length widget
-    st.session_state.TRAIN_INTERVAL_LENGTH = 500
+    st.session_state.TRAIN_INTERVAL_LENGTH = 365
 
 if "HORIZON" not in st.session_state:
     # set the initial default value of horizon length widget
-    st.session_state.HORIZON = 60
+    st.session_state.HORIZON = 30
 
 if 'TRAINED' not in st.session_state:
     st.session_state.TRAINED=False
