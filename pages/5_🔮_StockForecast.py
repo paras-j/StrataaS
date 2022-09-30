@@ -312,7 +312,7 @@ class Stock:
         
 
 st.set_page_config(layout="wide", initial_sidebar_state="expanded")
-st.title('Stock forecast dashboard')
+st.title('No code AI based Stock forecast')
 
 
 
