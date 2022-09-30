@@ -1,8 +1,9 @@
 import streamlit as st
+import creds
 
 st.title("Voice of the Stakeholders")
 
-
+st.write(creds.api_key)
 
 # # config.py
 # TWITTER_CONSUMER_KEY = ''
