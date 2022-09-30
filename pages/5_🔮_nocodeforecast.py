@@ -417,8 +417,5 @@ train_test_forecast_c.button(
     key='TRAIN_JOB'
 )
 
-st.sidebar.markdown("""
-written by [Hamza RABI](https://www.linkedin.com/in/hamza-rabi/)
-""")
 Stock.train_test_forecast_report(SYMB)        
         
