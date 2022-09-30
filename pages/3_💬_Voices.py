@@ -40,8 +40,8 @@ import tweepy
 # import psycopg2, psycopg2.extras
 import plotly.graph_objects as go
 
-auth = tweepy.OAuthHandler(config.TWITTER_CONSUMER_KEY, config.TWITTER_CONSUMER_SECRET)
-auth.set_access_token(config.TWITTER_ACCESS_TOKEN, config.TWITTER_ACCESS_TOKEN_SECRET)
+auth = tweepy.OAuthHandler(st.secrets.TWITTER_CONSUMER_KEY, st.secrets.TWITTER_CONSUMER_SECRET)
+auth.set_access_token(st.secrets.TWITTER_ACCESS_TOKEN, st.secrets.TWITTER_ACCESS_TOKEN_SECRET)
 api = tweepy.API(auth)
 
 # connection = psycopg2.connect(host=config.DB_HOST, database=config.DB_NAME, user=config.DB_USER, password=config.DB_PASS)
