@@ -335,7 +335,7 @@ END = sub_columns[1].date_input("To", value=YESTERDAY, max_value=YESTERDAY, min_
 START = Stock.nearest_business_day(START)
 END = Stock.nearest_business_day(END)
 # ---------------stock selection------------------
-STOCKS = np.array([ "GOOG", "GME", "FB","AAPL",'TSLA'])  # TODO : include all stocks
+STOCKS = np.array([ "GOOG", "GME", "META","AAPL",'TSLA', "ELAN", "UPS"])  # TODO : include all stocks
 SYMB = window_selection_c.selectbox("select stock", STOCKS)
 
 
