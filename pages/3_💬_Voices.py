@@ -53,7 +53,7 @@ option = st.sidebar.selectbox("Which Dashboard?", ('stocktwits','twitter'), 1)
 # st.header(option)
 
 if option == 'twitter':
-    for username in config.TWITTER_USERNAMES:
+    for username in st.secrets.TWITTER_USERNAMES:
         user = api.get_user(username)
         tweets = api.user_timeline(username)
 
