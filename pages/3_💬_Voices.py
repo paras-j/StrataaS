@@ -48,29 +48,29 @@ api = tweepy.API(auth)
 # cursor = connection.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
 # option = st.sidebar.selectbox("Which Dashboard?", ('twitter', 'wallstreetbets', 'stocktwits', 'chart', 'pattern'), 3)
-option = st.sidebar.selectbox("Which Dashboard?", ('stocktwits','twitter'), 1)
+option = st.sidebar.selectbox("Which Dashboard?", ('stocktwits'), 1)
 
 # st.header(option)
 
-if option == 'twitter':
-    for username in st.secrets.TWITTER_USERNAMES:
-#        user = api.get_user(username)
-        user = api.get_user(screen_name="TechWiser", include_entities=False)
-        description = user._json['description']
-        tweets = api.user_timeline(username)
+# if option == 'twitter':
+#     for username in st.secrets.TWITTER_USERNAMES:
+# #        user = api.get_user(username)
+#         user = api.get_user(screen_name=username, include_entities=False)
+#         description = user._json['description']
+#         tweets = api.user_timeline(username)
 
-        st.subheader(username)
-        st.image(user.profile_image_url)
+#         st.subheader(username)
+#         st.image(user.profile_image_url)
         
-        for tweet in tweets:
-            if '$' in tweet.text:
-                words = tweet.text.split(' ')
-                for word in words:
-                    if word.startswith('$') and word[1:].isalpha():
-                        symbol = word[1:]
-                        st.write(symbol)
-                        st.write(tweet.text)
-                        st.image(f"https://finviz.com/chart.ashx?t={symbol}")
+#         for tweet in tweets:
+#             if '$' in tweet.text:
+#                 words = tweet.text.split(' ')
+#                 for word in words:
+#                     if word.startswith('$') and word[1:].isalpha():
+#                         symbol = word[1:]
+#                         st.write(symbol)
+#                         st.write(tweet.text)
+#                         st.image(f"https://finviz.com/chart.ashx?t={symbol}")
 
 # if option == 'chart':
 #     symbol = st.sidebar.text_input("Symbol", value='MSFT', max_chars=None, key=None, type='default')
