@@ -21,7 +21,7 @@ if submit:
     
 
 
-st.title("Voice of the Stakeholders")
+st.title("Get financials from SEC Edgar")
 
 import pandas as pd
 import numpy as np
@@ -32,8 +32,9 @@ option = st.sidebar.selectbox("Which company?", ('CIK0000320193','CIK0000789019'
 
 r = requests.get(f"https://data.sec.gov/api/xbrl/companyfacts/{option}.json")
 
-data = r.json()
-st.write(data)
+# data = r.json()
+# st.write(data)
+
 # for message in data['messages']:
 #     st.image(message['user']['avatar_url'])
 #     st.write(message['user']['username'])
