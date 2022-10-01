@@ -30,9 +30,9 @@ import plotly.graph_objects as go
 
 option = st.sidebar.selectbox("Which company?", ('CIK0000320193','CIK0000789019','CIK0001652044','CIK0001326801','CIK0001739104','CIK0001090727','CIK0001318605'), 3)
 
-r = requests.get(f"https://data.sec.gov/api/xbrl/companyfacts/{option}.json")
+response = requests.get(f"https://data.sec.gov/api/xbrl/companyfacts/{option}.json", headers=headers)
 
-data = pd.json_normalize(r.json())
+data = pd.json_normalize(response.json())
 st.write(data)
 
 # for message in data['messages']:
