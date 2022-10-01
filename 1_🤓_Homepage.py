@@ -32,8 +32,8 @@ option = st.sidebar.selectbox("Which company?", ('CIK0000320193','CIK0000789019'
 
 r = requests.get(f"https://data.sec.gov/api/xbrl/companyfacts/{option}.json")
 
-# data = r.json()
-# st.write(data)
+data = pd.json_normalize(r.json())
+st.write(data)
 
 # for message in data['messages']:
 #     st.image(message['user']['avatar_url'])
